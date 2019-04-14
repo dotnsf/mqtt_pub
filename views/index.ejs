@@ -31,7 +31,7 @@ $(function(){
     window.addEventListener( "deviceorientation", deviceOrientation );
   }
 });
- 
+
 function connect(){
   var hostname = $('#mqtt_hostname').val();
   var port = parseInt( $('#mqtt_port').val() );
@@ -47,11 +47,11 @@ function connect(){
 
 function deviceMotion( e ) {
   e.preventDefault();
-	
+
   ac = e.acceleration;
   acg = e.accelerationIncludingGravity;
   rot = e.rotationRate;
-	
+
   //publishMessage();
 }
 
@@ -63,7 +63,7 @@ function deviceOrientation( e ) {
   ori['tiltLR'] = tiltLR;
   ori['tiltFB'] = tiltFB;
   ori['dir'] = dir;
-	
+
   //publishMessage();
 }
 
@@ -103,7 +103,7 @@ function publishMessage(){
       $('#ori_fb').html( ori['tiltFB'] );
       $('#ori_dir').html( ori['dir'] );
     }
-		
+
     if( d ){
       phoneData.d = d;
       phoneData.publish();
@@ -150,7 +150,7 @@ phoneData.publish = function(){
  <div data-role="header" data-position="fixed">
   <h1>MQTT</h1>
  </div>
- 
+
  <div data-role="content">
   <table border="1" cellspacing="0" data-theme="c" width="100%">
    <thead>
@@ -167,13 +167,13 @@ phoneData.publish = function(){
   <a href="#page1" class="ui-btn" onClick="connect();">Connect</a>
  </div>
 </div>
- 
+
 <div id="page1" data-role="page">
  <div data-role="header" data-position="fixed">
-  <div data-role="page" id="page1" data-add-back-btn="true"></div>
+  <a class="btn" href="#page0">Back</a>
   <h1>MQTT</h1>
  </div>
- 
+
  <div data-role="content">
   <table border="1" cellspacing="0" data-theme="c" width="100%">
    <thead>
