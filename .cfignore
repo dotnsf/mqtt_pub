@@ -1,0 +1,7 @@
+.git/
+test/
+node_modules/
+package-lock.json
+settings.js.*
+npm-debug.log
+vcap-local.js
